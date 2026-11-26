@@ -78,6 +78,7 @@ export type Project = {
   quip: string
   href: string
   repo: string
+  live?: string
 }
 
 export const projects: Project[] = [
@@ -89,6 +90,7 @@ export const projects: Project[] = [
     quip: '"who scored the most this season?" now has an answer',
     href: '/projects/astro/',
     repo: 'https://github.com/raphaeluwadone/astro-world',
+    live: 'https://astro-dry-run.netlify.app/',
   },
   {
     name: 'Mergewatch',
@@ -205,6 +207,7 @@ export type CaseStudyContent = {
   summary: string
   tags: string[]
   repo: string
+  live?: string
   stats: { value: string; label: string }[]
   story: { heading: string; body: string }[]
   hero: { src: string; alt: string }
@@ -216,6 +219,7 @@ export type CaseStudyContent = {
 const astro: CaseStudyContent = {
   slug: 'astro',
   repo: 'https://github.com/raphaeluwadone/astro-world',
+  live: 'https://astro-dry-run.netlify.app/',
   shotLayout: 'phone',
   name: 'Astro',
   summary: "The club app for a 70+ player Sunday five-a-side football group: sign-ups, payments, teams, results and the season's history in one place.",

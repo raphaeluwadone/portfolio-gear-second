@@ -108,6 +108,10 @@
   white-space: nowrap;
 }
 
+.live {
+  color: var(--pink);
+}
+
 .code:hover {
   text-decoration: underline;
 }

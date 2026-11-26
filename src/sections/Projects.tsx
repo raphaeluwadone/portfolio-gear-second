@@ -47,6 +47,11 @@ export function Projects({ sectionRef, revealed }: Props) {
                 </div>
               </div>
               <div className={styles.actions}>
+                {p.live && (
+                  <a data-cursor-hover href={p.live} target="_blank" rel="noopener noreferrer" className={`${styles.code} ${styles.live}`}>
+                    live ↗
+                  </a>
+                )}
                 <a data-cursor-hover href={p.repo} target="_blank" rel="noopener noreferrer" className={styles.code}>
                   code ↗
                 </a>

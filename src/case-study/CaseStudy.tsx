@@ -28,9 +28,16 @@ export function CaseStudy({ study }: { study: CaseStudyContent }) {
             </span>
           ))}
         </div>
-        <a href={study.repo} className={styles.repoLink} target="_blank" rel="noopener noreferrer">
-          view the code on GitHub ↗
-        </a>
+        <div className={styles.links}>
+          {study.live && (
+            <a href={study.live} className={styles.liveLink} target="_blank" rel="noopener noreferrer">
+              open the live app ↗
+            </a>
+          )}
+          <a href={study.repo} className={styles.repoLink} target="_blank" rel="noopener noreferrer">
+            view the code on GitHub ↗
+          </a>
+        </div>
       </header>
 
       <section className={styles.hero}>
