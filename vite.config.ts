@@ -9,6 +9,9 @@ export default defineConfig({
       input: {
         home: resolve(import.meta.dirname, 'index.html'),
         astro: resolve(import.meta.dirname, 'projects/astro/index.html'),
+        mergewatch: resolve(import.meta.dirname, 'projects/mergewatch/index.html'),
+        coinfidant: resolve(import.meta.dirname, 'projects/coinfidant/index.html'),
+        rattle: resolve(import.meta.dirname, 'projects/rattle/index.html'),
       },
     },
   },

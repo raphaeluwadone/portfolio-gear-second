@@ -1,9 +1,13 @@
 import { Starfield } from '../components/Starfield'
-import { astroCaseStudy as study } from '../content'
+import { caseStudies, type CaseStudyContent } from '../content'
 import s from '../sections/shared.module.css'
 import styles from './CaseStudy.module.css'
 
-export function CaseStudy() {
+export function CaseStudy({ study }: { study: CaseStudyContent }) {
+  const index = caseStudies.indexOf(study)
+  const next = caseStudies[(index + 1) % caseStudies.length]
+  const wide = study.shotLayout === 'wide'
+
   return (
     <div className={styles.page}>
       <Starfield variant="twinkle" clusters={0} scattered={24} />
@@ -14,7 +18,7 @@ export function CaseStudy() {
 
       <header className={styles.header}>
         <div className={`${s.orb} ${styles.orb}`} aria-hidden="true" />
-        <div className={styles.eyebrow}>CASE STUDY / 01</div>
+        <div className={styles.eyebrow}>CASE STUDY / {String(index + 1).padStart(2, '0')}</div>
         <h1 className={styles.title}>{study.name}</h1>
         <p className={styles.summary}>{study.summary}</p>
         <div className={`${s.tags} ${styles.tags}`}>
@@ -24,6 +28,9 @@ export function CaseStudy() {
             </span>
           ))}
         </div>
+        <a href={study.repo} className={styles.repoLink} target="_blank" rel="noopener noreferrer">
+          view the code on GitHub ↗
+        </a>
       </header>
 
       <section className={styles.hero}>
@@ -48,19 +55,21 @@ export function CaseStudy() {
         ))}
       </section>
 
-      <section className={styles.shots}>
+      <section className={wide ? `${styles.shots} ${styles.shotsWide}` : styles.shots}>
         {study.shots.map((shot) => (
-          <figure key={shot.src} className={styles.shot}>
-            <img src={shot.src} alt={shot.alt} width={780} height={1520} loading="lazy" />
+          <figure key={shot.src} className={wide ? styles.shotWide : styles.shot}>
+            <img src={shot.src} alt={shot.alt} width={wide ? 2880 : 780} height={wide ? 1800 : 1600} loading="lazy" />
             <figcaption>{shot.caption}</figcaption>
           </figure>
         ))}
       </section>
 
       <footer className={styles.footer}>
-        <div className={styles.footerNote}>built solo, shipped with nakama-level pride</div>
         <a href="/" className={styles.backButton}>
           ← back to portfolio
+        </a>
+        <a href={`/projects/${next.slug}/`} className={styles.nextLink}>
+          next: {next.name} →
         </a>
       </footer>
     </div>

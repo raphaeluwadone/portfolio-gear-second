@@ -103,6 +103,48 @@
   box-shadow: 0 0 25px rgb(0 0 0 / 0.4);
 }
 
+.repoLink {
+  display: inline-block;
+  margin-top: 24px;
+  font: 600 14px/1.4 var(--font-mono);
+  color: var(--green);
+}
+
+.repoLink:hover,
+.nextLink:hover {
+  text-decoration: underline;
+}
+
+.shotsWide {
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.shotWide {
+  margin: 0;
+}
+
+.shotWide img {
+  position: relative;
+  z-index: 6;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+}
+
+.shotWide figcaption {
+  margin-top: 12px;
+  font: 600 13px/1.4 var(--font-mono);
+  color: var(--text-dim);
+}
+
+.nextLink {
+  font: 700 15px/1 var(--font-mono);
+  color: var(--pink);
+}
+
 .shot {
   margin: 0;
 }
@@ -173,11 +215,6 @@
   flex-wrap: wrap;
   gap: 20px;
   border-top: 1px solid var(--line);
-}
-
-.footerNote {
-  font: 400 13px/1.4 var(--font-mono);
-  color: var(--text-muted);
 }
 
 .backButton {
