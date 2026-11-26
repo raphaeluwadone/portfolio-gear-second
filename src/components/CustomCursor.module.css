@@ -1,0 +1,36 @@
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-100px, -100px);
+}
+
+.dot {
+  width: 9px;
+  height: 16px;
+  background: var(--green);
+  z-index: 8998;
+  transition: transform 90ms linear;
+  animation: caretPulse 1s step-end infinite;
+}
+
+.ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--pink);
+  z-index: 8997;
+  transition:
+    transform 180ms var(--ease),
+    width 180ms var(--ease),
+    height 180ms var(--ease),
+    border-color 180ms var(--ease);
+}
+
+.hover {
+  width: 54px;
+  height: 54px;
+  border-color: var(--green);
+}

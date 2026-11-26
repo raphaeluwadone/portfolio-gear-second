@@ -1,0 +1,15 @@
+.bar {
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 8px;
+  height: 16px;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  z-index: 9700;
+  animation: blink 1s step-end infinite;
+}
+
+.scrolling {
+  animation: none;
+}

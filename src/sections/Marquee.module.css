@@ -1,0 +1,32 @@
+.strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.track {
+  display: inline-flex;
+  animation: marquee 22s linear infinite;
+}
+
+.run {
+  display: inline-flex;
+}
+
+.word,
+.spark {
+  padding: 0 24px;
+  font: 700 20px/1 var(--font-mono);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.word {
+  color: var(--line-strong);
+}
+
+.spark {
+  color: var(--pink);
+}
