@@ -77,6 +77,7 @@ export type Project = {
   color: string
   quip: string
   href: string
+  repo: string
 }
 
 export const projects: Project[] = [
@@ -87,6 +88,7 @@ export const projects: Project[] = [
     color: 'var(--green)',
     quip: '"who scored the most this season?" now has an answer',
     href: '/projects/astro/',
+    repo: 'https://github.com/raphaeluwadone/astro-world',
   },
   {
     name: 'Mergewatch',
@@ -95,6 +97,7 @@ export const projects: Project[] = [
     color: 'var(--pink)',
     quip: 'for when the review queue becomes a lifestyle',
     href: '/projects/mergewatch/',
+    repo: 'https://github.com/raphaeluwadone/mergewatch',
   },
   {
     name: 'Coinfidant',
@@ -103,6 +106,7 @@ export const projects: Project[] = [
     color: 'var(--blue)',
     quip: 'budgets by payday, not by calendar',
     href: '/projects/coinfidant/',
+    repo: 'https://github.com/raphaeluwadone/coinfidant',
   },
   {
     name: 'Rattle',
@@ -111,6 +115,7 @@ export const projects: Project[] = [
     color: 'var(--green)',
     quip: 'the todo list that actually listens',
     href: '/projects/rattle/',
+    repo: 'https://github.com/raphaeluwadone/rattle',
   },
 ]
 

@@ -23,37 +23,40 @@ export function Projects({ sectionRef, revealed }: Props) {
       <SmallBrackets className={s.float} style={{ top: 100, right: '14%', opacity: 0.4, zIndex: 1, ['--delay' as string]: '0.7s' }} />
 
       <ul className={`${s.content} ${styles.list}`}>
-        {projects.map((p, i) => {
-          const external = p.href.startsWith('http')
-          return (
-            <li key={p.name} className="reveal-item" style={{ ['--i' as string]: i }}>
-              <a
-                data-cursor-hover
-                href={p.href}
-                className={styles.row}
-                {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
-              >
-                <span className={styles.index}>{String(i + 1).padStart(2, '0')}</span>
-                <div>
-                  <div className={styles.titleRow}>
-                    <h3 className={styles.title}>{p.name}</h3>
-                    <span className={styles.status} style={{ background: p.color }} aria-hidden="true" />
-                  </div>
-                  <p className={styles.desc}>{p.desc}</p>
-                  <div className={styles.quip}>{p.quip}</div>
-                  <div className={`${s.tags} ${styles.tags}`}>
-                    {p.tags.map((t) => (
-                      <span key={t} className={s.tag}>
-                        {t}
-                      </span>
-                    ))}
-                  </div>
+        {projects.map((p, i) => (
+          <li key={p.name} className={`${styles.item} reveal-item`} style={{ ['--i' as string]: i }}>
+            <div className={styles.row}>
+              <span className={styles.index}>{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <div className={styles.titleRow}>
+                  <h3 className={styles.title}>
+                    <a data-cursor-hover href={p.href} className={styles.cardLink}>
+                      {p.name}
+                    </a>
+                  </h3>
+                  <span className={styles.status} style={{ background: p.color }} aria-hidden="true" />
                 </div>
-                <span className={styles.view}>{external ? 'code ↗' : 'view →'}</span>
-              </a>
-            </li>
-          )
-        })}
+                <p className={styles.desc}>{p.desc}</p>
+                <div className={styles.quip}>{p.quip}</div>
+                <div className={`${s.tags} ${styles.tags}`}>
+                  {p.tags.map((t) => (
+                    <span key={t} className={s.tag}>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.actions}>
+                <a data-cursor-hover href={p.repo} target="_blank" rel="noopener noreferrer" className={styles.code}>
+                  code ↗
+                </a>
+                <span className={styles.view} aria-hidden="true">
+                  view →
+                </span>
+              </div>
+            </div>
+          </li>
+        ))}
       </ul>
     </section>
   )
