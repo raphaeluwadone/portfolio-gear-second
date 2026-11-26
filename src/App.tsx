@@ -20,14 +20,31 @@ import { Now } from './sections/Now'
 import { Projects } from './sections/Projects'
 import { Stack } from './sections/Stack'
 
+const BOOTED_KEY = 'booted'
+
+function hasBooted() {
+  try {
+    return sessionStorage.getItem(BOOTED_KEY) === '1'
+  } catch {
+    return false
+  }
+}
+
 export default function App() {
   const reducedMotion = useReducedMotion()
-  const [booting, setBooting] = useState(!reducedMotion)
+  const [booting, setBooting] = useState(() => !reducedMotion && !hasBooted())
   const [terminalOpen, setTerminalOpen] = useState(false)
   const [konami, setKonami] = useState(false)
   const { active, revealed, register, scrollTo } = useSectionTracker()
 
-  const finishBoot = useCallback(() => setBooting(false), [])
+  const finishBoot = useCallback(() => {
+    setBooting(false)
+    try {
+      sessionStorage.setItem(BOOTED_KEY, '1')
+    } catch {
+      // Storage blocked: the boot just plays again next time.
+    }
+  }, [])
   const toggleTerminal = useCallback(() => setTerminalOpen((o) => !o), [])
 
   useParallax(!reducedMotion)
