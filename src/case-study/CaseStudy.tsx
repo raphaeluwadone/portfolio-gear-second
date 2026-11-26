@@ -12,7 +12,7 @@ export function CaseStudy({ study }: { study: CaseStudyContent }) {
     <div className={styles.page}>
       <Starfield variant="twinkle" clusters={0} scattered={24} />
 
-      <a href="/" className={styles.backFloating}>
+      <a href="/#projects" className={styles.backFloating}>
         ← back to portfolio
       </a>
 
@@ -65,7 +65,7 @@ export function CaseStudy({ study }: { study: CaseStudyContent }) {
       </section>
 
       <footer className={styles.footer}>
-        <a href="/" className={styles.backButton}>
+        <a href="/#projects" className={styles.backButton}>
           ← back to portfolio
         </a>
         <a href={`/projects/${next.slug}/`} className={styles.nextLink}>

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { BootSequence } from './components/BootSequence'
 import { CustomCursor } from './components/CustomCursor'
 import { ScreenOverlay } from './components/ScreenOverlay'
@@ -46,6 +46,12 @@ export default function App() {
     }
   }, [])
   const toggleTerminal = useCallback(() => setTerminalOpen((o) => !o), [])
+
+  useEffect(() => {
+    if (booting || !location.hash) return
+    const frame = requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView())
+    return () => cancelAnimationFrame(frame)
+  }, [booting])
 
   useParallax(!reducedMotion)
   useKonami(() => {
