@@ -1,15 +1,12 @@
-// Placeholder copy (per the handoff): contact email, social links, employers, and
-// every project except Astro. Replace with real content before launch.
-
 export const features = {
   cursorEnabled: true,
   terminalEggEnabled: true,
 }
 
 export const links = {
-  email: 'hello@example.com',
-  github: '#',
-  linkedin: '#',
+  email: 'raphaeluwadone@gmail.com',
+  github: 'https://github.com/raphaeluwadone',
+  linkedin: 'https://www.linkedin.com/in/raphaeluwadone',
 }
 
 export type SectionId = 'about' | 'projects' | 'experience' | 'skills' | 'now' | 'contact'
@@ -71,7 +68,7 @@ export const phrasePool = [
   { jp: '道', romaji: 'Michi', en: 'The path' },
 ]
 
-export const marqueeWords = ['REACT', 'TYPESCRIPT', 'NODE.JS', 'POSTGRESQL', 'AWS', 'STILL DEBUGGING CSS']
+export const marqueeWords = ['REACT', 'TYPESCRIPT', 'NODE.JS', 'POSTGRESQL', 'KOTLIN', 'STILL DEBUGGING CSS']
 
 export type Project = {
   name: string
@@ -85,61 +82,89 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: 'Astro',
-    desc: 'Team-management platform for youth sports leagues: real-time rosters, scheduling, and a coach-facing admin console.',
-    tags: ['React', 'Node.js', 'PostgreSQL'],
+    desc: 'The club app for a 70+ player Sunday five-a-side group: pay-first sign-ups, captain drafts, live results, ratings and a whole season of stats.',
+    tags: ['React', 'Supabase', 'PostgreSQL', 'Paystack'],
     color: 'var(--green)',
-    quip: '"it just works" (a coach, probably)',
+    quip: '"who scored the most this season?" now has an answer',
     href: '/projects/astro/',
   },
   {
-    name: 'Realtime Ops Dashboard',
-    desc: 'Internal analytics tool streaming live metrics over WebSockets, with a Node/Postgres service layer underneath.',
-    tags: ['TypeScript', 'WebSockets', 'AWS'],
+    name: 'Mergewatch',
+    desc: 'One dashboard for every pull request that needs you, from GitHub and linked Jira tickets, showing only what changed since you last looked.',
+    tags: ['React', 'TanStack Query', 'Hono', 'Drizzle'],
     color: 'var(--pink)',
-    quip: 'zero refreshes required, mostly zero bugs',
-    href: '#',
+    quip: 'for when the review queue becomes a lifestyle',
+    href: 'https://github.com/raphaeluwadone/mergewatch',
   },
   {
-    name: 'Component Library & Design Tooling',
-    desc: 'A shared UI kit and theming layer adopted across three product teams, cutting new-screen build time in half.',
-    tags: ['Design Systems', 'React', 'CI/CD'],
+    name: 'Coinfidant',
+    desc: 'An installable budgeting app built around the pay cycle: it splits each salary across bills, savings and debt, then sets a weekly spending budget.',
+    tags: ['React', 'Node.js', 'PostgreSQL', 'Fly.io'],
     color: 'var(--blue)',
-    quip: 'built with nakama, not just teammates',
-    href: '#',
+    quip: 'budgets by payday, not by calendar',
+    href: 'https://github.com/raphaeluwadone/coinfidant',
+  },
+  {
+    name: 'Rattle',
+    desc: 'A voice-first todo app: talk or type to the assistant and it adds, edits and completes tasks. Jira integration in progress.',
+    tags: ['React', 'Hono', 'PostgreSQL', 'OAuth'],
+    color: 'var(--green)',
+    quip: 'the todo list that actually listens',
+    href: 'https://github.com/raphaeluwadone/rattle',
   },
 ]
 
 export const experience = [
   {
-    period: '2024–now',
-    role: 'Senior Frontend Engineer',
-    company: 'Current Co.',
-    desc: 'Own the front-of-stack for the flagship product; ship API and schema changes when the feature calls for it.',
+    period: '2025–now',
+    role: 'Software Engineer',
+    company: 'Enflux (Estia Inc.)',
+    desc: 'Education analytics for universities. Moved eight front-end modules onto a new typed platform API behind config flags, and built the Faculty Workload chair review and copy-forward flows.',
     current: true,
   },
   {
-    period: '2021–2024',
-    role: 'Frontend Engineer',
-    company: 'Prior Co.',
-    desc: 'Built and maintained the customer-facing dashboard; introduced the internal component library.',
+    period: '2023–2025',
+    role: 'Lead Front-end Engineer',
+    company: 'Blended Technology',
+    desc: 'Sole front-end engineer for most of my time on the Delta State University student portal: fee payments, course registration and student records.',
     current: false,
   },
   {
-    period: '2019–2021',
-    role: 'Full-Stack Developer',
-    company: 'Earlier Co.',
-    desc: 'Worked across a small Node/React stack, from database schema to production UI.',
+    period: '2021–2024',
+    role: 'Front-end Engineer (Contract)',
+    company: 'Qaltrak Technologies',
+    desc: 'Built the shipper, carrier and admin front ends of the FreightHero marketplace in Next.js, Remix and SvelteKit, then moved into Kotlin and Quarkus back-end work.',
+    current: false,
+  },
+  {
+    period: '2020–2021',
+    role: 'Front-end Instructor',
+    company: 'Tech Studio Academy',
+    desc: 'Taught HTML, CSS and JavaScript to about 50 students across three cohorts, and mentored them through their capstone projects.',
+    current: false,
+  },
+  {
+    period: '2019–2020',
+    role: 'Graphic and Product Designer',
+    company: 'Cloudware Technologies',
+    desc: 'Marketing graphics, social assets and web layouts. Where the eye for detail started.',
     current: false,
   },
 ]
 
 export const skillGroups = [
-  { title: 'Frontend', items: ['React', 'TypeScript', 'Next.js', 'CSS / Design Systems', 'Accessibility'] },
-  { title: 'Backend & infra', items: ['Node.js', 'PostgreSQL', 'REST / GraphQL', 'AWS', 'Docker'] },
+  {
+    title: 'Frontend',
+    items: ['React', 'TypeScript', 'Next.js / Remix', 'TanStack Router & Query', 'Tailwind / Chakra UI', 'Accessibility (WCAG)', 'Vitest / Playwright'],
+  },
+  {
+    title: 'Backend & infra',
+    items: ['Node.js / Hono', 'Python / Flask', 'Kotlin / Quarkus', 'PostgreSQL / Drizzle', 'Docker / Fly.io', 'GitHub Actions'],
+  },
 ]
 
 export const nowItems = [
-  { label: 'Building', value: 'a side project worth shipping' },
+  { label: 'Building', value: 'Astro, for my Sunday football group' },
   { label: 'Learning', value: 'Rust, slowly' },
   { label: 'Reading', value: 'whatever is open in 12 tabs' },
   { label: 'Rewatching', value: 'One Piece, from episode 1 (again)' },
@@ -147,11 +172,11 @@ export const nowItems = [
 
 export const terminalResponses: Record<string, string> = {
   help: 'commands: about, projects, skills, contact, coffee, whoami, sudo, onepiece, nakama, strawhat, devilfruit, oda, wano, gear5, konnichiwa, clear',
-  whoami: 'Raphael Uwadone, AKA Dønatellø. A frontend engineer who reads the backend logs too.',
+  whoami: 'Raphael Uwadone, AKA Dønatellø. A front-end engineer in Lagos who reads the backend logs too.',
   about: 'frontend-leaning full-stack engineer. see the About section ↑',
-  projects: '3 shipped things live in the Projects section. scroll up.',
+  projects: '4 things I built live in the Projects section. scroll up.',
   experience: 'the timeline lives in the Experience section.',
-  skills: 'React · TypeScript · Node.js · PostgreSQL · AWS, mostly.',
+  skills: 'React · TypeScript · Node.js · PostgreSQL · Python · Kotlin, mostly.',
   now: "what I'm building, learning, reading and rewatching, in the Now section.",
   contact: `${links.email}, or use the buttons in Contact.`,
   coffee: 'brewing... here you go. (no emoji here, just imagine it)',
@@ -169,26 +194,26 @@ export const terminalResponses: Record<string, string> = {
 
 export const astroCaseStudy = {
   name: 'Astro',
-  summary: 'Team-management platform for youth sports leagues: real-time rosters, scheduling, and a coach-facing admin console.',
-  tags: ['React', 'Node.js', 'PostgreSQL', 'WebSockets'],
+  summary: "The club app for a 70+ player Sunday five-a-side football group: sign-ups, payments, teams, results and the season's history in one place.",
+  tags: ['React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Paystack'],
   stats: [
-    { value: '2 weeks → 4 hrs', label: 'season setup time' },
-    { value: '3', label: 'leagues onboarded in year one' },
-    { value: '0', label: 'group texts about schedule changes (down from many)' },
+    { value: '70+', label: 'players on the roster' },
+    { value: 'pay first', label: 'gets the place, with a waitlist behind it' },
+    { value: 'MOTM', label: 'vote and player ratings after every game' },
   ],
   story: [
     {
       heading: 'The problem',
-      body: 'League coordinators were juggling rosters, schedules, and coach communication across spreadsheets, group texts, and a handful of disconnected tools. Nothing talked to each other, and every season start was a scramble.',
+      body: 'Running Sunday football for 70-odd players means weekly sign-ups, match fees, quarterly dues, picking teams, recording results and keeping a season of stats. None of it lived in one place.',
     },
     {
       heading: 'What I built',
-      body: 'A React front end with a real-time layer for live roster updates, backed by a Node/Express API and PostgreSQL for scheduling logic and history. I owned the product end to end: schema design, API, and every screen coaches and admins touch.',
+      body: 'A React and TypeScript app on Supabase. Most of the rules live in Postgres: row-level security decides who can see and change what, and the trickier flows (claiming a place, swaps, the captain draft, payments) are database functions with their own SQL tests. Paystack takes fees, dues and the kitty, with webhooks and a reconcile job for when a callback goes missing.',
     },
     {
-      heading: 'The outcome',
-      body: 'Season setup went from days to minutes, and coaches stopped asking "did you see my text?" Rosters and schedule changes now show up everywhere at once.',
+      heading: 'What it does',
+      body: 'Players sign up and pay for their place, captains draft the teams, results go in live, and every game ends with ratings and a Man of the Match vote. Profiles, rankings, Player of the Month, yearly badges and the Salami Cup keep the history in one place.',
     },
   ],
-  shots: ['Roster screen', 'Scheduling screen', 'Coach console'],
+  shots: ['Matchday sign-up', 'Live results', 'Player profile'],
 }

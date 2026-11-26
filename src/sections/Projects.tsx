@@ -23,29 +23,37 @@ export function Projects({ sectionRef, revealed }: Props) {
       <SmallBrackets className={s.float} style={{ top: 100, right: '14%', opacity: 0.4, zIndex: 1, ['--delay' as string]: '0.7s' }} />
 
       <ul className={`${s.content} ${styles.list}`}>
-        {projects.map((p, i) => (
-          <li key={p.name} className="reveal-item" style={{ ['--i' as string]: i }}>
-            <a data-cursor-hover href={p.href} className={styles.row}>
-              <span className={styles.index}>{String(i + 1).padStart(2, '0')}</span>
-              <div>
-                <div className={styles.titleRow}>
-                  <h3 className={styles.title}>{p.name}</h3>
-                  <span className={styles.status} style={{ background: p.color }} aria-hidden="true" />
+        {projects.map((p, i) => {
+          const external = p.href.startsWith('http')
+          return (
+            <li key={p.name} className="reveal-item" style={{ ['--i' as string]: i }}>
+              <a
+                data-cursor-hover
+                href={p.href}
+                className={styles.row}
+                {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
+              >
+                <span className={styles.index}>{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <div className={styles.titleRow}>
+                    <h3 className={styles.title}>{p.name}</h3>
+                    <span className={styles.status} style={{ background: p.color }} aria-hidden="true" />
+                  </div>
+                  <p className={styles.desc}>{p.desc}</p>
+                  <div className={styles.quip}>{p.quip}</div>
+                  <div className={`${s.tags} ${styles.tags}`}>
+                    {p.tags.map((t) => (
+                      <span key={t} className={s.tag}>
+                        {t}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <p className={styles.desc}>{p.desc}</p>
-                <div className={styles.quip}>{p.quip}</div>
-                <div className={`${s.tags} ${styles.tags}`}>
-                  {p.tags.map((t) => (
-                    <span key={t} className={s.tag}>
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <span className={styles.view}>view →</span>
-            </a>
-          </li>
-        ))}
+                <span className={styles.view}>{external ? 'code ↗' : 'view →'}</span>
+              </a>
+            </li>
+          )
+        })}
       </ul>
     </section>
   )
