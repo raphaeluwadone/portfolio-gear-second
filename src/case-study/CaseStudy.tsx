@@ -3,15 +3,6 @@ import { astroCaseStudy as study } from '../content'
 import s from '../sections/shared.module.css'
 import styles from './CaseStudy.module.css'
 
-// TODO: swap the ScreenshotSlot placeholders for real screenshots once they exist.
-function ScreenshotSlot({ label, tall }: { label: string; tall?: boolean }) {
-  return (
-    <div className={tall ? `${styles.slot} ${styles.slotTall}` : styles.slot} role="img" aria-label={`${label} (screenshot coming soon)`}>
-      <span>{label}</span>
-    </div>
-  )
-}
-
 export function CaseStudy() {
   return (
     <div className={styles.page}>
@@ -36,7 +27,7 @@ export function CaseStudy() {
       </header>
 
       <section className={styles.hero}>
-        <ScreenshotSlot label="Drop a screenshot of Astro's dashboard" tall />
+        <img className={styles.heroShot} src={study.hero.src} alt={study.hero.alt} width={2880} height={1800} />
       </section>
 
       <section className={styles.stats}>
@@ -58,8 +49,11 @@ export function CaseStudy() {
       </section>
 
       <section className={styles.shots}>
-        {study.shots.map((label) => (
-          <ScreenshotSlot key={label} label={label} />
+        {study.shots.map((shot) => (
+          <figure key={shot.src} className={styles.shot}>
+            <img src={shot.src} alt={shot.alt} width={780} height={1520} loading="lazy" />
+            <figcaption>{shot.caption}</figcaption>
+          </figure>
         ))}
       </section>
 

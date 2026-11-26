@@ -215,5 +215,13 @@ export const astroCaseStudy = {
       body: 'Players sign up and pay for their place, captains draft the teams, results go in live, and every game ends with ratings and a Man of the Match vote. Profiles, rankings, Player of the Month, yearly badges and the Salami Cup keep the history in one place.',
     },
   ],
-  shots: ['Matchday sign-up', 'Live results', 'Player profile'],
+  hero: {
+    src: '/astro/astro-dashboard.jpg',
+    alt: "Astro's home screen: next matchday, the Salami Cup countdown, open ratings and last week's results.",
+  },
+  shots: [
+    { src: '/astro/astro-matchday.jpg', caption: 'Matchday: claim a spot, first to pay', alt: 'Matchday screen on a phone, with ratings open and a button to claim a Sunday spot.' },
+    { src: '/astro/astro-result.jpg', caption: 'Match result and Man of the Match', alt: 'A match result on a phone: Epsilon 1, Alpha 4, with scorers and the Man of the Match vote.' },
+    { src: '/astro/astro-profile.jpg', caption: 'Player card and profile', alt: 'A player profile on a phone, showing the rating, position and favourite number on a player card.' },
+  ],
 }

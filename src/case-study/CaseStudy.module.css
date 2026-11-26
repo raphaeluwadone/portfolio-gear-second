@@ -86,24 +86,31 @@
   padding-bottom: 60px;
 }
 
-.slot {
+/* Above the starfield (z-index 5). */
+.heroShot,
+.shot img {
+  position: relative;
+  z-index: 6;
+  display: block;
   width: 100%;
-  height: 280px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  text-align: center;
-  border: 1px dashed var(--line-strong);
+  height: auto;
+  border: 1px solid var(--line-strong);
   border-radius: var(--r-md);
   background: var(--bg-alt);
-  font: 600 13px/1.4 var(--font-mono);
-  color: var(--text-dim);
 }
 
-.slotTall {
-  height: 560px;
+.heroShot {
   box-shadow: 0 0 25px rgb(0 0 0 / 0.4);
+}
+
+.shot {
+  margin: 0;
+}
+
+.shot figcaption {
+  margin-top: 12px;
+  font: 600 13px/1.4 var(--font-mono);
+  color: var(--text-dim);
 }
 
 .stats {
@@ -153,8 +160,8 @@
 .shots {
   padding-bottom: 100px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
 }
 
 .footer {
@@ -212,8 +219,9 @@
     font-size: 18px;
   }
 
-  .slotTall {
-    height: 320px;
+  .shot {
+    max-width: 300px;
+    margin: 0 auto;
   }
 
   .stats {
