@@ -118,6 +118,7 @@ export const projects: Project[] = [
     quip: 'the todo list that actually listens',
     href: '/projects/rattle/',
     repo: 'https://github.com/raphaeluwadone/rattle',
+    live: 'https://rattle-rho.vercel.app/',
   },
 ]
 
@@ -331,6 +332,7 @@ const coinfidant: CaseStudyContent = {
 const rattle: CaseStudyContent = {
   slug: 'rattle',
   repo: 'https://github.com/raphaeluwadone/rattle',
+  live: 'https://rattle-rho.vercel.app/',
   shotLayout: 'phone',
   name: 'Rattle',
   summary: 'A voice-first todo app. Talk or type to the assistant and it adds, edits, completes and deletes tasks.',
